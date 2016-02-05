@@ -8,11 +8,12 @@
     <packaging>jar</packaging>
 
 <!---
+<<<<<<< HEAD
 10
 11
 12
+khgskjdfghdghdfgj
 -->
-
     <dependencies>
 
         <dependency>
