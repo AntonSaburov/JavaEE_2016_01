@@ -9,12 +9,5 @@ import org.slf4j.LoggerFactory;
  */
 public class OrderManager
 {
-    private static final Logger log = LoggerFactory.getLogger(OrderManager.class);
 
-    private OrderDAO dao;
-
-    public void updateOrder() {
-        int counter = 10;
-        log.info("Info:{} {} {}", counter, counter, counter);
-    }
 }

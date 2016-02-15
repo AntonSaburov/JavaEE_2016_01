@@ -1,14 +1,32 @@
 package edu.javacourse.crm.entity;
 
+import javax.persistence.*;
+
 /**
  * @author Anton Saburov <Anton.Saburov@OCRV.RU> on 08.02.2016.
  */
+@Entity
+@Table(name="CRM_ORDER_ITEM")
 public class CrmOrderItem
 {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="order_item_gen")
+    @SequenceGenerator(name="order_item_gen", sequenceName="crm_order_item_order_item_id_seq")
+    @Column(name="ORDER_ITEM_ID")
     private Long orderItemId;
+
+    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "ORDER_ID")
     private CrmOrder order;
+
+    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "PRODUCT_ID")
     private CrmProduct product;
+
+    @Column(name="PRICE")
     private Double price;
+
+    @Column(name="QUANTITY")
     private Integer quantity;
 
     public Long getOrderItemId() {
