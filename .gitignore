@@ -6,3 +6,4 @@ out
 # maven
 target
 /GS_JMock/build/
+/GS_Spring_Annotation/nbproject/private/

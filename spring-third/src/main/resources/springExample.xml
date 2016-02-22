@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:task="http://www.springframework.org/schema/task"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context 
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.springframework.org/schema/util
+            http://www.springframework.org/schema/util/spring-util-2.5.xsd
+            http://www.springframework.org/schema/task 
+            http://www.springframework.org/schema/task/spring-task-3.0.xsd
+            http://www.springframework.org/schema/aop 
+            http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+    <aop:config>
+<!--        <aop:aspect id="aspect1" ref="simpleAspect1">
+            <aop:pointcut id="pointcut1" expression="execution(* edu.javacourse.spring.bean.AspectDemoBean.*Aspect(..))"/>
+            <aop:before pointcut-ref="pointcut1" method="beforeTest"/>
+            <aop:around pointcut-ref="pointcut1" method="aroundTest"/>
+            <aop:after pointcut-ref="pointcut1" method="afterTest"/>
+        </aop:aspect>-->
+        <aop:aspect id="aspect2" ref="simpleAspect2">
+            <aop:pointcut id="pointcut2" expression="execution(* edu.javacourse.spring.bean.AspectDemoBean.*Throw(..))"/>
+            <aop:before pointcut-ref="pointcut2" method="beforeTest"/>
+            <aop:around pointcut-ref="pointcut2" method="aroundTest"/>
+            <aop:after-returning pointcut-ref="pointcut2" method="afterTest"/>
+            <aop:after-throwing pointcut-ref="pointcut2" method="afterThrowing"/>
+        </aop:aspect>
+    </aop:config>
+
+<!--    <bean id="simpleAspect1" class="edu.javacourse.spring.aspect.SimpleAspect1">
+        <property name="aspectName" value="SimpleAspect"/>
+    </bean>-->
+    <bean id="simpleAspect2" class="edu.javacourse.spring.aspect.SimpleAspect2">
+        <property name="aspectName" value="SimpleAspect"/>
+    </bean>
+
+    <bean id="simple" class="edu.javacourse.spring.bean.AspectDemoBean">
+    </bean>
+
+</beans>
