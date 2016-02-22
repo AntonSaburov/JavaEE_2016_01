@@ -3,11 +3,11 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>edu.javacourse.spring</groupId>
-    <artifactId>spring-second</artifactId>
+    <artifactId>spring-ioc-annotation</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>spring-second</name>
+    <name>spring-ioc-annotation</name>
     <url>http://maven.apache.org</url>
 
     <dependencies>
