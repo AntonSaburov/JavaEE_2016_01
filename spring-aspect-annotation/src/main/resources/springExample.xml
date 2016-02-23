@@ -30,7 +30,7 @@
     <bean id="simpleAspect1" class="edu.javacourse.spring.aspect.SimpleAspect1">
         <property name="aspectName" value="SimpleAspect"/>
     </bean>
-
+<!--
     <bean id="simpleAspect2" class="edu.javacourse.spring.aspect.SimpleAspect2">
         <property name="aspectName" value="SimpleAspect"/>
     </bean>
@@ -38,7 +38,7 @@
     <bean id="simpleAspect3" class="edu.javacourse.spring.aspect.SimpleAspect3">
         <property name="aspectName" value="SimpleAspect"/>
     </bean>
-
+-->
     <!-- При загрузке бинов по классу можно не указывать ID -->
 <!--    <bean class="edu.javacourse.spring.bean.AspectDemoBean">
     </bean>-->

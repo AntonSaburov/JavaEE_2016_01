@@ -15,19 +15,19 @@ public class SpringExample {
         SpringExample se = new SpringExample();
         se.demoSpring();
     }
-    
-    public void demoSpring() {
-        // Вариант относительного пути к файлу
-        ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"springExample.xml"});
 
-        // Вариант вызова файла, который включает в себя другие файлы
+    public void demoSpring() {
+        // Р’Р°СЂРёР°РЅС‚ РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕРіРѕ РїСѓС‚Рё Рє С„Р°Р№Р»Сѓ
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"springExample.xml"});
+
+        // Р’Р°СЂРёР°РЅС‚ РІС‹Р·РѕРІР° С„Р°Р№Р»Р°, РєРѕС‚РѕСЂС‹Р№ РІРєР»СЋС‡Р°РµС‚ РІ СЃРµР±СЏ РґСЂСѓРіРёРµ С„Р°Р№Р»С‹
 //        ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"springSuit.xml"});
 
-        // Вариант абсолютного пути к файлу
+        // Р’Р°СЂРёР°РЅС‚ Р°Р±СЃРѕР»СЋС‚РЅРѕРіРѕ РїСѓС‚Рё Рє С„Р°Р№Р»Сѓ
 //        FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext(new String[]{"springExample.xml"});
-        
-        // Пример вызова бина, который указан в конфигурационном файле
-        // Теперь можно указывать класс явно
+
+        // РџСЂРёРјРµСЂ РІС‹Р·РѕРІР° Р±РёРЅР°, РєРѕС‚РѕСЂС‹Р№ СѓРєР°Р·Р°РЅ РІ РєРѕРЅС„РёРіСѓСЂР°С†РёРѕРЅРЅРѕРј С„Р°Р№Р»Рµ
+        // РўРµРїРµСЂСЊ РјРѕР¶РЅРѕ СѓРєР°Р·С‹РІР°С‚СЊ РєР»Р°СЃСЃ СЏРІРЅРѕ
         System.out.println();
         System.out.println();
         SpringTest st = context.getBean("testSpringBean", SpringTest.class);
@@ -37,14 +37,14 @@ public class SpringExample {
         System.out.println();
         System.out.println();
 
-        // Вызов бина с внутренним описанием еще одного бина
+        // Р’С‹Р·РѕРІ Р±РёРЅР° СЃ РІРЅСѓС‚СЂРµРЅРЅРёРј РѕРїРёСЃР°РЅРёРµРј РµС‰Рµ РѕРґРЅРѕРіРѕ Р±РёРЅР°
         SpringTest stInner = context.getBean("outerbean", SpringTest.class);
         System.out.println(stInner.getNumber());
         System.out.println(stInner.getChild().getHello());
         System.out.println();
         System.out.println();
-        
-        // Создание обхекта через статический вызов
+
+        // РЎРѕР·РґР°РЅРёРµ РѕР±С…РµРєС‚Р° С‡РµСЂРµР· СЃС‚Р°С‚РёС‡РµСЃРєРёР№ РІС‹Р·РѕРІ
         System.out.println("===> getInstance");
         SpringTestInstance test2 = context.getBean("instanceBean1", SpringTestInstance.class);
         test2.sayHello();
@@ -53,7 +53,7 @@ public class SpringExample {
         System.out.println();
         System.out.println();
 
-        // Создание обхекта с указанием параметров в конструкторе
+        // РЎРѕР·РґР°РЅРёРµ РѕР±С…РµРєС‚Р° СЃ СѓРєР°Р·Р°РЅРёРµРј РїР°СЂР°РјРµС‚СЂРѕРІ РІ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРµ
         SpringTestConstructor test4 = context.getBean("constructorBean", SpringTestConstructor.class);
         System.out.println("===> Constructor");
         System.out.println(test4.getNumber());
@@ -63,7 +63,7 @@ public class SpringExample {
         System.out.println();
         System.out.println();
 
-        // Инициализация свойства типа Map
+        // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃРІРѕР№СЃС‚РІР° С‚РёРїР° Map
         SpringMap test5 = context.getBean("testMap", SpringMap.class);
         System.out.println("===> Map");
         for (String s : test5.getAccounts().keySet()) {
@@ -73,12 +73,12 @@ public class SpringExample {
         System.out.println();
         System.out.println();
 
-        // Вызов бинов с постинициализацией и преддестроем - здесь показан старый вариант приведения типа
+        // Р’С‹Р·РѕРІ Р±РёРЅРѕРІ СЃ РїРѕСЃС‚РёРЅРёС†РёР°Р»РёР·Р°С†РёРµР№ Рё РїСЂРµРґРґРµСЃС‚СЂРѕРµРј - Р·РґРµСЃСЊ РїРѕРєР°Р·Р°РЅ СЃС‚Р°СЂС‹Р№ РІР°СЂРёР°РЅС‚ РїСЂРёРІРµРґРµРЅРёСЏ С‚РёРїР°
         //InitBean1 init1 = (InitBean1) context.getBean("init1");
         InitBean2 init2 = (InitBean2) context.getBean("init2");
 
-        // Надо привести к типу ClassPathXmlApplicationContext для использования destroy
-        ((ClassPathXmlApplicationContext)context).destroy();
-        
+        // РќР°РґРѕ РїСЂРёРІРµСЃС‚Рё Рє С‚РёРїСѓ ClassPathXmlApplicationContext РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ destroy
+        context.destroy();
+
     }
 }

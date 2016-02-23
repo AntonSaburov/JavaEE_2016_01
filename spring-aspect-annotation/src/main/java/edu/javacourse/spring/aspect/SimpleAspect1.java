@@ -5,6 +5,7 @@ import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +26,7 @@ public class SimpleAspect1 {
 
     @Around("execution(public * *(..))")
     public Object doBasicProfiling(ProceedingJoinPoint pjp) throws Throwable {
-        System.out.println("start doBasicProfiling 1");
+        System.out.println("start doBasicProfiling 1:" + pjp.getSignature().toString());
         Object retVal = pjp.proceed();
         System.out.println("stop doBasicProfiling 1");
         return retVal;
