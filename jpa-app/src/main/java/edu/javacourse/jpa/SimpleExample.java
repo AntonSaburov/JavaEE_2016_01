@@ -9,7 +9,9 @@ public class SimpleExample {
     public static void main(String[] args) {
         RegionManager rm = new RegionManager();
         rm.init();
-        addRegion(rm);
+        for(int i=0; i<10; i++){
+            addRegion(rm);
+        }
         firstSelect(rm);
         rm.finish();
     }

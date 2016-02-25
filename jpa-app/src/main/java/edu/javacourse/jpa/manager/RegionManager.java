@@ -12,7 +12,7 @@ public class RegionManager {
     private EntityManager entityManager;
 
     public void init() {
-        entityManagerFactory = Persistence.createEntityManagerFactory("GS_JPA_FirstPU2");
+        entityManagerFactory = Persistence.createEntityManagerFactory("GS_JPA_FirstPU1");
         System.out.println(entityManagerFactory.getClass().getSimpleName());
         entityManager = entityManagerFactory.createEntityManager();
         System.out.println(entityManager.getClass().getSimpleName());
