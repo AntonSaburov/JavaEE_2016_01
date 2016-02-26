@@ -9,8 +9,8 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Aspect
-//@Component
-@Order(3)
+@Component
+@Order(2)
 public class SimpleAspect2 {
 
     private String aspectName;

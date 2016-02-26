@@ -13,8 +13,9 @@ import javax.persistence.Table;
 public class Region {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "regiongen")
-    @SequenceGenerator(name = "regiongen", sequenceName = "jc_region_region_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "regiongen")
+//    @SequenceGenerator(name = "regiongen", sequenceName = "jc_region_region_id_seq")
     @Column(name = "region_id")
     private Long regionId;
     @Column(name = "region_name")

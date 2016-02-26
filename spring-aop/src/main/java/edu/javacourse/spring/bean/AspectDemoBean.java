@@ -1,8 +1,7 @@
 package edu.javacourse.spring.bean;
 
-public class AspectDemoBean {
-
-    //@Override
+public class AspectDemoBean
+{
     public void testHello() {
         System.out.println("testHello");
     }

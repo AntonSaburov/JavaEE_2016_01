@@ -18,12 +18,17 @@
     <bean id="simpleDemo" class="edu.javacourse.spring.bean.AspectDemoBean"/>
 
     <bean id="simpleInterceptor" class="edu.javacourse.spring.interceptor.SimpleInterceptor"/>
+    <bean id="simpleInterceptor2" class="edu.javacourse.spring.interceptor.SimpleInterceptor2"/>
 
     <bean id="simpleProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="simpleDemo"/>
+        <!--<property name="target" ref="simpleDemo"/>-->
+        <property name="target">
+            <bean class="edu.javacourse.spring.bean.AspectDemoBean"/>
+        </property>
         <property name="interceptorNames">
             <list>
                 <value>simpleInterceptor</value>
+                <value>simpleInterceptor2</value>
             </list>
         </property>
     </bean>    

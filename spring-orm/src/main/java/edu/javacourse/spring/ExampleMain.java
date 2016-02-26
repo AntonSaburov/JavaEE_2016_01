@@ -12,10 +12,12 @@ public class ExampleMain {
         ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"RegionExample.xml","RegionDatabase.xml"});
         
         RegionFacade rf = context.getBean("regionFacade", RegionFacade.class);
-        List<RegionView> list = rf.findRegion();
-        for(RegionView rv : list) {
-            System.out.println("Region:" + rv.getRegionId() + ":" + rv.getRegionName());
-        }
-        rf.addRegion(list.get(0));
+//        List<RegionView> list = rf.findRegion();
+//        for(RegionView rv : list) {
+//            System.out.println("Region:" + rv.getRegionId() + ":" + rv.getRegionName());
+//        }
+        RegionView r = new RegionView();
+        r.setRegionName("NEW REGION");
+        rf.addRegion(r);
     }
 }

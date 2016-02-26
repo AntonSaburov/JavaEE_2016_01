@@ -8,6 +8,6 @@ public class AspectDemoBean {
     
     public void testThrow() {
         System.out.println("testThrow");
-        throw new RuntimeException("He");
+//        throw new RuntimeException("He");
     }
 }

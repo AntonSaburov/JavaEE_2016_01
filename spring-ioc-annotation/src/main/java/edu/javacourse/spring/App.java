@@ -11,14 +11,14 @@ public class App {
     MessageService mockMessageService() {
         return new MessageService() {
             public String getMessage() {
-              return "Hello World!";
+                return "Hello World!";
             }
         };
     }
 
-  public static void main(String[] args) {
-      ApplicationContext context = new AnnotationConfigApplicationContext(App.class);
-      MessagePrinter printer = context.getBean(MessagePrinter.class);
-      printer.printMessage();
-  }
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(App.class);
+        MessagePrinter printer = context.getBean(MessagePrinter.class);
+        printer.printMessage();
+    }
 }

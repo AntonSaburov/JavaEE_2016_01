@@ -23,14 +23,15 @@
 
     <!-- Вариант прописывания конфигурации с аннотациями -->
     <!-- Если включен автоматический скан, то нужна аннотация @Component -->
-<!--    <context:component-scan base-package="edu.javacourse.spring.aspect"/>
-    <context:component-scan base-package="edu.javacourse.spring.bean"/>-->
+    <context:component-scan base-package="edu.javacourse.spring.aspect"/>
+    <context:component-scan base-package="edu.javacourse.spring.bean"/>
 
     <!-- Вариант прописывания конфигурации внутри XML -->
+<!--
     <bean id="simpleAspect1" class="edu.javacourse.spring.aspect.SimpleAspect1">
         <property name="aspectName" value="SimpleAspect"/>
     </bean>
-<!--
+
     <bean id="simpleAspect2" class="edu.javacourse.spring.aspect.SimpleAspect2">
         <property name="aspectName" value="SimpleAspect"/>
     </bean>
@@ -42,8 +43,8 @@
     <!-- При загрузке бинов по классу можно не указывать ID -->
 <!--    <bean class="edu.javacourse.spring.bean.AspectDemoBean">
     </bean>-->
-    
+<!--
     <bean id="simple" class="edu.javacourse.spring.bean.AspectDemoBean">
     </bean>
-
+-->
 </beans>

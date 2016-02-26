@@ -10,6 +10,7 @@ public class SpringExample {
         ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"springExample.xml"});
         
         AspectDemoBean adb = context.getBean("simpleProxy", AspectDemoBean.class);
+        System.out.println(adb.getClass().getCanonicalName());
         adb.testHello();
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Aspect
-//@Component
+@Component
 @Order(1)
 public class SimpleAspect1 {
 

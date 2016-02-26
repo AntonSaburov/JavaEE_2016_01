@@ -10,8 +10,8 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Aspect
-//@Component
-@Order(2)
+@Component
+@Order(3)
 public class SimpleAspect3 implements Ordered {
 
     private String aspectName;

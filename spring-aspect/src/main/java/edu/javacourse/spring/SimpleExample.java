@@ -8,9 +8,9 @@ public class SimpleExample {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"springExample.xml"});
-        
+
         AspectDemoBean adb = context.getBean(AspectDemoBean.class);
-        
+        System.out.println(adb.getClass().getCanonicalName());
         adb.testAspect("gemini");
         
         adb.testThrow();

@@ -42,7 +42,7 @@
         </property>
         <property name="hibernateProperties">
             <value>
-                hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+                hibernate.dialect=org.hibernate.dialect.PostgreSQL94Dialect
                 hibernate.show_sql=true
             </value>
         </property>

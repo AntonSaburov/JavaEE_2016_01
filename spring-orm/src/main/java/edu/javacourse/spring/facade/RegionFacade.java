@@ -6,7 +6,8 @@ import edu.javacourse.spring.dao.RegionDAO;
 import edu.javacourse.spring.entity.Region;
 import edu.javacourse.spring.view.RegionView;
 
-public class RegionFacade {
+public class RegionFacade
+{
     private RegionDAO dao;
 
     public void setDao(RegionDAO dao) {
@@ -14,7 +15,8 @@ public class RegionFacade {
     }
 
     public Long addRegion(RegionView pv) {
-        return dao.addRegion(createRegionFromView(pv));
+        Long l = dao.addRegion(createRegionFromView(pv));
+        return l;
     }
 
     public void updateRegion(RegionView pv) {
